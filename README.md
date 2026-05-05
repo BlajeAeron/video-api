@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # hallo_agim
 
 A new Flutter project.
@@ -15,3 +16,7 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+=======
+# video-api
+API untuk aplikasi video flutter
+>>>>>>> 0ecdea6df168b4856f04af19aba6f909521e1d58
