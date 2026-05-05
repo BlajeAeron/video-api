@@ -1,10 +1,10 @@
 <?php
 $conn = new mysqli(
-  getenv("mysql.railway.internal"),
-  getenv("root"),
-  getenv("MRuHglKVQsWhHDFROtCUHnWyBYAHrHmg"),
-  getenv("railway"),
-  getenv("3306")
+  getenv("MYSQLHOST"),
+  getenv("MYSQLUSER"),
+  getenv("MYSQLPASSWORD"),
+  getenv("MYSQLDATABASE"),
+  getenv("MYSQLPORT")
 );
 
 if ($conn->connect_error) {
