@@ -1,16 +1,10 @@
-FROM php:8.2-apache
+FROM php:8.2-cli
 
-# Install extension mysqli
+WORKDIR /app
+
+# install mysqli
 RUN docker-php-ext-install mysqli
 
-# Enable Apache mod_rewrite
-RUN a2enmod rewrite
+COPY . .
 
-# FIX ERROR MPM
-RUN a2dismod mpm_event
-RUN a2enmod mpm_prefork
-
-# Copy project ke Apache
-COPY . /var/www/html/
-
-EXPOSE 80
+CMD php -S 0.0.0.0:8080
