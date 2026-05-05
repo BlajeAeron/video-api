@@ -1,10 +1,14 @@
 <?php
+$url = getenv("MYSQL_PUBLIC_URL");
+
+$parts = parse_url($url);
+
 $conn = new mysqli(
-  getenv("MYSQLHOST"),
-  getenv("MYSQLUSER"),
-  getenv("MYSQLPASSWORD"),
-  getenv("MYSQLDATABASE"),
-  getenv("MYSQLPORT")
+  $parts['host'],
+  $parts['user'],
+  $parts['pass'],
+  ltrim($parts['path'], '/'),
+  $parts['port']
 );
 
 if ($conn->connect_error) {
