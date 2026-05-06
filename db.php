@@ -1,17 +1,13 @@
 <?php
-$url = getenv("MYSQL_PUBLIC_URL");
+$host = getenv("MYSQLHOST");
+$user = getenv("MYSQLUSER");
+$pass = getenv("MYSQLPASSWORD");
+$db   = getenv("MYSQLDATABASE");
+$port = getenv("MYSQLPORT");
 
-$parts = parse_url($url);
-
-$conn = new mysqli(
-  $parts['host'],
-  $parts['user'],
-  $parts['pass'],
-  ltrim($parts['path'], '/'),
-  $parts['port']
-);
+$conn = new mysqli($host, $user, $pass, $db, $port);
 
 if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+    die("Connection failed: " . $conn->connect_error);
 }
 ?>
